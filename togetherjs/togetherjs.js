@@ -77,7 +77,7 @@
     fallbackLang: "en-US"
   };
 
-  var styleSheet = "/togetherjs/togetherjs.css";
+ var styleSheet = "/css/custom-together.css";
 
   var baseUrl = "__baseUrl__";
   if (baseUrl == "__" + "baseUrl__") {

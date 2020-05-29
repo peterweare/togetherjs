@@ -338,7 +338,7 @@ define(["require", "jquery", "util", "session", "templates", "templating", "link
       //for ipad
       else {
         $('.togetherjs-dock-right').animate({
-          width: "27%"
+          width: "204px"
         }, {
           duration:60, easing:"linear"
         });
@@ -356,7 +356,7 @@ define(["require", "jquery", "util", "session", "templates", "templating", "link
       // });
 
       //replace the anchor icon
-      var src = "/togetherjs/images/togetherjs-logo-close.png";
+      var src = "../common/images/togetherjs-logo-close.png";
       $("#togetherjs-dock-anchor #togetherjs-dock-anchor-horizontal img").attr("src", src);
     }
 
@@ -369,7 +369,7 @@ define(["require", "jquery", "util", "session", "templates", "templating", "link
       });
 
       //replace the anchor icon
-      var src = "/togetherjs/images/togetherjs-logo-open.png";
+      var src = "../common/images/togetherjs-logo-open.png";
       $("#togetherjs-dock-anchor #togetherjs-dock-anchor-horizontal img").attr("src", src);
 
       $('.togetherjs-window').animate({
@@ -414,7 +414,7 @@ define(["require", "jquery", "util", "session", "templates", "templating", "link
       // });
 
       //replace the anchor icon
-      var src = "/togetherjs/images/togetherjs-logo-close.png";
+      var src = "../common/images/togetherjs-logo-close.png";
       $("#togetherjs-dock-anchor #togetherjs-dock-anchor-horizontal img").attr("src", src);
 
       $("#togetherjs-dock-anchor").toggle(function() {
