@@ -325,6 +325,12 @@ define(["require", "jquery", "util", "session", "templates", "templating", "link
       $('#togetherjs-dock #togetherjs-buttons').animate({
         opacity: 1
       });
+        
+        // swap out the function of the button to close the dock
+       $("#togetherjs-dock-anchor").off("click");
+       $("#togetherjs-dock-anchor").click(function () {
+        closeDock();
+      });
 
       //for iphone
       if($(window).width() < 480) {
@@ -342,6 +348,7 @@ define(["require", "jquery", "util", "session", "templates", "templating", "link
         }, {
           duration:60, easing:"linear"
         });
+          
       }
 
 
@@ -371,6 +378,12 @@ define(["require", "jquery", "util", "session", "templates", "templating", "link
       //replace the anchor icon
       var src = "../common/images/togetherjs-logo-open.png";
       $("#togetherjs-dock-anchor #togetherjs-dock-anchor-horizontal img").attr("src", src);
+      
+      // setup listener to open the dock (clear it first, just in case)
+      $("#togetherjs-dock-anchor").off("click");
+      $("#togetherjs-dock-anchor").click(function () {
+        openDock();
+      });
 
       $('.togetherjs-window').animate({
         opacity: 0
@@ -387,13 +400,11 @@ define(["require", "jquery", "util", "session", "templates", "templating", "link
         duration:60, easing:"linear"
       });
 
-      // remove bg overlay
-      //$(".overlay").remove();
     }
 
     // Setting the anchor button + dock mobile actions
     if($.browser.mobile) {
-
+        
       // toggle the audio button
       $("#togetherjs-audio-button").click(function () {
         windowing.toggle("#togetherjs-rtc-not-supported");
@@ -413,16 +424,24 @@ define(["require", "jquery", "util", "session", "templates", "templating", "link
       //   left: 0
       // });
 
+      
       //replace the anchor icon
       var src = "../common/images/togetherjs-logo-close.png";
       $("#togetherjs-dock-anchor #togetherjs-dock-anchor-horizontal img").attr("src", src);
 
-      $("#togetherjs-dock-anchor").toggle(function() {
+      /* $("#togetherjs-dock-anchor").toggle(function() {
           closeDock();
         },function(){
           openDock();
-      });
+      }); */
+    
+    $("#togetherjs-dock-anchor").off("click");
+    $("#togetherjs-dock-anchor").click(function () {
+      closeDock();
+    });
+        
     }
+
 
     $("#togetherjs-share-button").click(function () {
       windowing.toggle("#togetherjs-share");
